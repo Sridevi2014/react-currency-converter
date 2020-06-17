@@ -18,7 +18,8 @@ class Converter extends Component {
     // Initializes the currencies with values from the api
     componentDidMount() {
         axios
-            .get("http://api.openrates.io/latest")
+           .get("https://api.openrates.io/latest")  
+            
             .then(response => {
                 // Initialized with 'EUR' because the base currency is 'EUR'
                 // and it is not included in the response
@@ -39,7 +40,7 @@ class Converter extends Component {
     convertHandler = () => {
         if (this.state.fromCurrency !== this.state.toCurrency) {
             axios
-                .get(`http://api.openrates.io/latest?base=${this.state.fromCurrency}&symbols=${this.state.toCurrency}`)
+                .get(`https://api.openrates.io/latest?base=${this.state.fromCurrency}&symbols=${this.state.toCurrency}`)
                 .then(response => {
                     const result = this.state.amount * (response.data.rates[this.state.toCurrency]);
                     this.setState({ result: result.toFixed(5) })
