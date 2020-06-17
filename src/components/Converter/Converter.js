@@ -3,7 +3,9 @@ import axios from "axios";
 
 import './Converter.css';
 
+
 class Converter extends Component {
+    
     state = {
         result: null,
         fromCurrency: "USD",
@@ -60,12 +62,15 @@ class Converter extends Component {
         }
     }
 
+
+
     render() {
         return (
             <div className="Converter">
                 <img src="https://res.cloudinary.com/bajabenedik/image/upload/f_auto,q_auto/v1585861632/money_cq7wan.png" alt="money symbol" class="money-img"></img>
+                
+                <h2><span>Exchange Rate</span> Calculator</h2>
                 <p>Choose the currency and the amounts to get the exchange rate</p>
-                <h2><span>Currency </span> Converter {/* <span role="img" aria-label="money">&#x1f4b5;</span>  */}</h2>
                 <div className="Form">
                     <input
                         name="amount"
